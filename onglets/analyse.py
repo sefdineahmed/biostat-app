@@ -32,7 +32,7 @@ def analyse_descriptive():
             (c3,f"{miss} ({miss_pct:.1f}%)","Données manquantes","#ffa502"),
             (c4,f"{int(df['Tempsdesuivi'].median())}m","Survie médiane","#2ed573")]:
             col.markdown(f"""
-            <div style="background:white;border-radius:14px;padding:1.1rem;border:1px solid #e2eaf8;
+            <div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.1rem;border:1px solid #e2eaf8;
                         box-shadow:0 2px 10px rgba(26,79,196,.05);border-top:3px solid {color};text-align:center">
               <div style="font-family:'JetBrains Mono',monospace;font-size:1.6rem;font-weight:600;color:#0d1b3e">{val}</div>
               <div style="font-size:11px;color:#6b7a9d;text-transform:uppercase;letter-spacing:.07em">{lbl}</div>
@@ -42,7 +42,7 @@ def analyse_descriptive():
         col_s, col_v = st.columns([1,2])
 
         with col_s:
-            st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem;border:1px solid #e2eaf8">
+            st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem;border:1px solid #e2eaf8">
               <div style="font-size:13px;font-weight:700;color:#0d1b3e;margin-bottom:10px">📋 Statistiques — Âge</div>""",
                 unsafe_allow_html=True)
             stats = df["AGE"].describe()
@@ -56,7 +56,7 @@ def analyse_descriptive():
             st.markdown("</div>", unsafe_allow_html=True)
 
         with col_v:
-            st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem;border:1px solid #e2eaf8">
+            st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem;border:1px solid #e2eaf8">
               <div style="font-size:13px;font-weight:700;color:#0d1b3e;margin-bottom:10px">📊 Distribution des variables cliniques</div>""",
                 unsafe_allow_html=True)
             selected_var = st.selectbox("Sélectionner une variable", df.columns.tolist(), key="ana_var")
@@ -84,7 +84,7 @@ def analyse_descriptive():
             st.dataframe(df.head(30), use_container_width=True, hide_index=True, height=300)
 
     with tab2:
-        st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem;border:1px solid #e2eaf8">
+        st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem;border:1px solid #e2eaf8">
           <div style="font-size:13px;font-weight:700;color:#0d1b3e;margin-bottom:8px">🔗 Matrice de corrélation</div>
           <div style="font-size:12px;color:#6b7a9d;margin-bottom:12px">Variables binaires encodées (OUI=1, NON=0)</div>""",
             unsafe_allow_html=True)
@@ -115,7 +115,7 @@ def analyse_descriptive():
         col_a, col_b = st.columns(2, gap="large")
 
         with col_a:
-            st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem;border:1px solid #e2eaf8">
+            st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem;border:1px solid #e2eaf8">
               <div style="font-size:13px;font-weight:700;color:#0d1b3e;margin-bottom:12px">
                 📈 Survie selon un facteur binaire</div>""", unsafe_allow_html=True)
             bin_cols = [c for c in df.columns if c not in ("AGE","Tempsdesuivi","Deces")]
@@ -152,7 +152,7 @@ def analyse_descriptive():
             st.markdown("</div>", unsafe_allow_html=True)
 
         with col_b:
-            st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem;border:1px solid #e2eaf8">
+            st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem;border:1px solid #e2eaf8">
               <div style="font-size:13px;font-weight:700;color:#0d1b3e;margin-bottom:12px">
                 📦 Boxplot — Âge & Temps de suivi</div>""", unsafe_allow_html=True)
             fig_box = go.Figure()

@@ -180,7 +180,7 @@ def registre():
                         st.balloons()
 
         with col_info:
-            st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem;
+            st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem;
                 border:1px solid #e2eaf8;box-shadow:0 2px 10px rgba(26,79,196,.05)">
               <div style="font-size:13px;font-weight:700;color:#0d1b3e;margin-bottom:12px">
                 📋 Checklist dossier</div>""", unsafe_allow_html=True)
@@ -215,7 +215,7 @@ def registre():
         col_imp, col_exp = st.columns(2, gap="large")
 
         with col_imp:
-            st.markdown("""<div style="background:white;border-radius:14px;padding:1.4rem;border:1px solid #e2eaf8">
+            st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.4rem;border:1px solid #e2eaf8">
               <div style="font-size:14px;font-weight:700;color:#0d1b3e;margin-bottom:12px">
                 📥 Import de données</div>""", unsafe_allow_html=True)
             uploaded = st.file_uploader("Fichier Excel/CSV patients",
@@ -237,7 +237,7 @@ def registre():
             st.markdown("</div>", unsafe_allow_html=True)
 
         with col_exp:
-            st.markdown("""<div style="background:white;border-radius:14px;padding:1.4rem;border:1px solid #e2eaf8">
+            st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.4rem;border:1px solid #e2eaf8">
               <div style="font-size:14px;font-weight:700;color:#0d1b3e;margin-bottom:12px">
                 📤 Export de données</div>""", unsafe_allow_html=True)
             st.markdown(f"**{len(df)} patients** dans la base de données courante.")

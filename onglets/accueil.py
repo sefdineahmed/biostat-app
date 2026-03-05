@@ -14,8 +14,8 @@ def _metric_card(col, icon, value, label, delta=None, delta_good=True, color="#1
         c = "#1e7e44" if delta_good else "#c0392b"
         badge = f"<div style='margin-top:6px;font-size:12px;color:{c};font-weight:600'>{arrow} {delta}</div>"
     col.markdown(f"""
-    <div style="background:white;border-radius:14px;padding:1.2rem 1.4rem;border:1px solid #e2eaf8;
-                box-shadow:0 2px 12px rgba(26,79,196,0.06);border-top:3px solid {color};">
+    <div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(10px);border-radius:14px;padding:1.2rem 1.4rem;border:1px solid #e2eaf8;
+                box-shadow:0 2px 16px rgba(26,79,196,0.08);border-top:3px solid {color};">
       <div style="font-size:22px;margin-bottom:4px">{icon}</div>
       <div style="font-family:'JetBrains Mono',monospace;font-size:2rem;font-weight:600;color:#0d1b3e;line-height:1">{value}</div>
       <div style="font-size:11px;color:#6b7a9d;text-transform:uppercase;letter-spacing:.07em;margin-top:4px">{label}</div>
@@ -40,10 +40,15 @@ def accueil():
 
     # ── Hero banner ──────────────────────────────────────────────────────────
     st.markdown(f"""
-    <div style="background:linear-gradient(135deg,#06091a 0%,#0d1b3e 60%,#1a3a7a 100%);
+    <div style="background:linear-gradient(135deg,#0d1b3e 0%,#1a4fc4 55%,#0a7ec4 100%);
                 border-radius:18px;padding:2.2rem 2.5rem;margin-bottom:1.6rem;
                 display:flex;align-items:center;justify-content:space-between;
-                box-shadow:0 8px 32px rgba(0,0,0,0.18);">
+                box-shadow:0 8px 40px rgba(13,27,62,0.18),0 1px 0 rgba(255,255,255,0.15) inset;
+                position:relative;overflow:hidden;">
+      <div style="position:absolute;top:-60px;right:-60px;width:240px;height:240px;border-radius:50%;
+                  background:radial-gradient(circle,rgba(0,198,255,0.18),transparent 70%);pointer-events:none"></div>
+      <div style="position:absolute;bottom:-40px;left:30%;width:180px;height:180px;border-radius:50%;
+                  background:radial-gradient(circle,rgba(255,255,255,0.07),transparent 70%);pointer-events:none"></div>
       <div>
         <div style="display:flex;align-items:center;gap:10px;margin-bottom:.4rem">
           <div style="background:linear-gradient(135deg,#1a4fc4,#00c6ff);border-radius:10px;
@@ -86,7 +91,7 @@ def accueil():
 
     # Kaplan-Meier global + stratifié
     with col_km:
-        st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem 1.4rem;border:1px solid #e2eaf8;box-shadow:0 2px 12px rgba(26,79,196,0.06)">
+        st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem 1.4rem;border:1px solid #e2eaf8;box-shadow:0 2px 12px rgba(26,79,196,0.06)">
             <div style="font-size:13px;font-weight:700;color:#0d1b3e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">📈 Courbe de Kaplan-Meier</div>
             <div style="font-size:12px;color:#6b7a9d;margin-bottom:.8rem">Probabilité de survie globale — cohorte {n} patients</div>""".format(n=n), unsafe_allow_html=True)
 
@@ -120,7 +125,7 @@ def accueil():
 
     # Donut décès/vivant
     with col_pie:
-        st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem 1.4rem;border:1px solid #e2eaf8;box-shadow:0 2px 12px rgba(26,79,196,0.06);height:100%">
+        st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem 1.4rem;border:1px solid #e2eaf8;box-shadow:0 2px 12px rgba(26,79,196,0.06);height:100%">
             <div style="font-size:13px;font-weight:700;color:#0d1b3e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">🔵 Statut vital</div>
             <div style="font-size:12px;color:#6b7a9d;margin-bottom:.8rem">Décès / Vivants</div>""", unsafe_allow_html=True)
         fig_d = go.Figure(go.Pie(
@@ -141,7 +146,7 @@ def accueil():
 
     # Age distribution
     with col_age:
-        st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem 1.4rem;border:1px solid #e2eaf8;box-shadow:0 2px 12px rgba(26,79,196,0.06);height:100%">
+        st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem 1.4rem;border:1px solid #e2eaf8;box-shadow:0 2px 12px rgba(26,79,196,0.06);height:100%">
             <div style="font-size:13px;font-weight:700;color:#0d1b3e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.2rem">🎂 Répartition par âge</div>
             <div style="font-size:12px;color:#6b7a9d;margin-bottom:.8rem">Distribution (31–81 ans)</div>""", unsafe_allow_html=True)
         bins = [31,40,50,60,70,82]
@@ -205,7 +210,7 @@ def accueil():
         pct = round((df[col] == "OUI").mean() * 100, 1) if col in df.columns else 0
         with cols_f[i % 4]:
             st.markdown(f"""
-            <div style="background:white;border-radius:12px;padding:1rem 1.2rem;border:1px solid #e2eaf8;
+            <div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:12px;padding:1rem 1.2rem;border:1px solid #e2eaf8;
                         margin-bottom:.7rem;box-shadow:0 1px 6px rgba(0,0,0,.04)">
               <div style="font-size:11px;color:#6b7a9d;margin-bottom:6px">{label}</div>
               <div style="background:#f0f4fb;border-radius:4px;height:6px;margin-bottom:5px">

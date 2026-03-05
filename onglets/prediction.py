@@ -153,7 +153,7 @@ def modelisation():
 
     with col_form:
         st.markdown("""
-        <div style="background:white;border-radius:16px;padding:1.6rem 1.8rem;
+        <div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:16px;padding:1.6rem 1.8rem;
                     border:1px solid #e2eaf8;box-shadow:0 2px 16px rgba(26,79,196,.06)">
           <div style="font-size:13px;font-weight:700;color:#0d1b3e;text-transform:uppercase;
                letter-spacing:.06em;margin-bottom:1rem;padding-bottom:.6rem;
@@ -206,7 +206,7 @@ def modelisation():
     with col_res:
         if not run:
             st.markdown("""
-            <div style="background:white;border-radius:16px;padding:2rem;border:1px solid #e2eaf8;
+            <div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:16px;padding:2rem;border:1px solid #e2eaf8;
                         box-shadow:0 2px 16px rgba(26,79,196,.06);text-align:center;
                         min-height:380px;display:flex;flex-direction:column;
                         align-items:center;justify-content:center;gap:10px">
@@ -244,7 +244,7 @@ def modelisation():
                     needle_pct = max(5, min(93, int((1 - cpred / 60) * 93)))
 
                     st.markdown(f"""
-                    <div style="background:white;border-radius:16px;padding:1.6rem;
+                    <div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:16px;padding:1.6rem;
                                 border:1px solid #e2eaf8;
                                 box-shadow:0 2px 16px rgba(26,79,196,.06);
                                 border-top:4px solid {risk_color}">
@@ -310,7 +310,7 @@ def modelisation():
 
                     # Survival curve
                     st.markdown("""
-                    <div style="background:white;border-radius:14px;padding:1rem 1.2rem;
+                    <div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1rem 1.2rem;
                                 border:1px solid #e2eaf8;box-shadow:0 2px 8px rgba(26,79,196,.05);
                                 margin-top:.8rem">
                       <div style="font-size:12px;font-weight:700;color:#0d1b3e;margin-bottom:.4rem">

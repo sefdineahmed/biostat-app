@@ -42,7 +42,7 @@ def a_propos():
         </div>""", unsafe_allow_html=True)
 
         # Model perf
-        st.markdown("""<div style="background:white;border-radius:14px;padding:1.4rem;border:1px solid #e2eaf8;
+        st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.4rem;border:1px solid #e2eaf8;
             box-shadow:0 2px 10px rgba(26,79,196,.05);margin-bottom:1rem">
           <div style="font-size:13px;font-weight:700;color:#0d1b3e;text-transform:uppercase;
                letter-spacing:.06em;margin-bottom:1rem">⚡ Performance des Modèles</div>
@@ -65,7 +65,7 @@ def a_propos():
             ]) + "</table></div>", unsafe_allow_html=True)
 
         # KPIs épidémio
-        st.markdown("""<div style="background:white;border-radius:14px;padding:1.4rem;border:1px solid #e2eaf8;box-shadow:0 2px 10px rgba(26,79,196,.05)">
+        st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.4rem;border:1px solid #e2eaf8;box-shadow:0 2px 10px rgba(26,79,196,.05)">
           <div style="font-size:13px;font-weight:700;color:#0d1b3e;text-transform:uppercase;letter-spacing:.06em;margin-bottom:1rem">
             📊 Indicateurs Épidémiologiques — Cohorte</div>
           <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">""" +
@@ -81,7 +81,7 @@ def a_propos():
 
     with col_r:
         # Team
-        st.markdown("""<div style="background:white;border-radius:14px;padding:1.4rem;border:1px solid #e2eaf8;
+        st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.4rem;border:1px solid #e2eaf8;
             box-shadow:0 2px 10px rgba(26,79,196,.05);margin-bottom:1rem">
           <div style="font-size:13px;font-weight:700;color:#0d1b3e;text-transform:uppercase;
                letter-spacing:.06em;margin-bottom:1rem">👥 Équipe de Recherche</div>""", unsafe_allow_html=True)
@@ -103,7 +103,7 @@ def a_propos():
         st.markdown("</div>", unsafe_allow_html=True)
 
         # Partners
-        st.markdown("""<div style="background:white;border-radius:14px;padding:1.4rem;border:1px solid #e2eaf8;
+        st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.4rem;border:1px solid #e2eaf8;
             box-shadow:0 2px 10px rgba(26,79,196,.05);margin-bottom:1rem">
           <div style="font-size:13px;font-weight:700;color:#0d1b3e;text-transform:uppercase;
                letter-spacing:.06em;margin-bottom:12px">🤝 Partenaires</div>""", unsafe_allow_html=True)

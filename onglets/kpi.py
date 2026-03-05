@@ -44,7 +44,7 @@ def kpi():
         c = "#1e7e44" if good else "#c0392b"
         d = f"<div style='font-size:11px;color:{c};font-weight:600;margin-top:4px'>{delta}</div>" if delta else ""
         col.markdown(f"""
-        <div style="background:white;border-radius:14px;padding:1.1rem 1.2rem;border:1px solid #e2eaf8;
+        <div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.1rem 1.2rem;border:1px solid #e2eaf8;
                     box-shadow:0 2px 10px rgba(26,79,196,.05);border-top:3px solid {color}">
           <div style="font-size:20px;margin-bottom:2px">{icon}</div>
           <div style="font-family:'JetBrains Mono',monospace;font-size:1.7rem;font-weight:600;color:#0d1b3e;line-height:1">{val}</div>
@@ -83,7 +83,7 @@ def kpi():
     col_km, col_mod = st.columns([3,2])
 
     with col_km:
-        st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem 1.4rem;
+        st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem 1.4rem;
             border:1px solid #e2eaf8;box-shadow:0 2px 10px rgba(26,79,196,.05)">
           <div style="font-size:13px;font-weight:700;color:#0d1b3e;text-transform:uppercase;
                letter-spacing:.06em;margin-bottom:.3rem">Courbes de survie — Kaplan-Meier stratifiées</div>
@@ -120,7 +120,7 @@ def kpi():
         st.markdown("</div>", unsafe_allow_html=True)
 
     with col_mod:
-        st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem 1.4rem;
+        st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem 1.4rem;
             border:1px solid #e2eaf8;box-shadow:0 2px 10px rgba(26,79,196,.05)">
           <div style="font-size:13px;font-weight:700;color:#0d1b3e;text-transform:uppercase;
                letter-spacing:.06em;margin-bottom:.3rem">Performance des modèles IA</div>
@@ -161,7 +161,7 @@ def kpi():
     col_rf, col_ag = st.columns([3,2])
 
     with col_rf:
-        st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem 1.4rem;
+        st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem 1.4rem;
             border:1px solid #e2eaf8;box-shadow:0 2px 10px rgba(26,79,196,.05)">
           <div style="font-size:13px;font-weight:700;color:#0d1b3e;text-transform:uppercase;
                letter-spacing:.06em;margin-bottom:.8rem">⚠️ Prévalence des facteurs de risque (%)</div>""",
@@ -190,7 +190,7 @@ def kpi():
         st.markdown("</div>", unsafe_allow_html=True)
 
     with col_ag:
-        st.markdown("""<div style="background:white;border-radius:14px;padding:1.2rem 1.4rem;
+        st.markdown("""<div style="background:rgba(255,255,255,0.88);backdrop-filter:blur(8px);border-radius:14px;padding:1.2rem 1.4rem;
             border:1px solid #e2eaf8;box-shadow:0 2px 10px rgba(26,79,196,.05)">
           <div style="font-size:13px;font-weight:700;color:#0d1b3e;text-transform:uppercase;
                letter-spacing:.06em;margin-bottom:.8rem">🎂 Survie médiane par groupe d'âge</div>""",
