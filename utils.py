@@ -189,38 +189,10 @@ def survival_proba_at(times, survs, month: int) -> float:
 # ── CSS global ────────────────────────────────────────────────────────────────
 GLOBAL_CSS = """
 <style>
+/* Shared page styles — background handled in main.py */
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 html, body, [class*="css"] { font-family: 'Sora', sans-serif !important; }
 #MainMenu, footer { visibility: hidden; }
 .block-container { padding-top: 1.2rem !important; padding-bottom: 2rem !important; max-width: 1280px !important; }
-
-/* Sidebar */
-[data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #06091a 0%, #0d1b3e 100%) !important;
-    border-right: 1px solid rgba(255,255,255,0.07);
-}
-[data-testid="stSidebar"] * { color: #c8d4f0 !important; }
-[data-testid="stSidebar"] .stSelectbox > div > div { background: rgba(255,255,255,0.07) !important; border-color: rgba(255,255,255,0.12) !important; }
-
-/* Metrics */
-[data-testid="stMetric"] { background: white; border-radius: 14px; padding: 1.1rem 1.3rem; border: 1px solid #e2eaf8; box-shadow: 0 2px 12px rgba(26,79,196,0.06); }
-[data-testid="stMetricLabel"] { font-size: 11px !important; color: #6b7a9d !important; text-transform: uppercase; letter-spacing: 0.07em; }
-[data-testid="stMetricValue"] { font-family: 'JetBrains Mono', monospace !important; font-size: 1.9rem !important; color: #0d1b3e !important; font-weight: 600 !important; }
-
-/* Tabs */
-.stTabs [data-baseweb="tab-list"] { background: #f0f4fb; border-radius: 10px; padding: 4px; gap: 2px; }
-.stTabs [data-baseweb="tab"] { background: transparent !important; border-radius: 8px !important; font-size: 13px !important; font-weight: 500 !important; color: #6b7a9d !important; padding: 8px 18px !important; }
-.stTabs [aria-selected="true"] { background: white !important; color: #1a4fc4 !important; box-shadow: 0 2px 8px rgba(26,79,196,0.12) !important; }
-
-/* Buttons */
-.stButton > button { background: linear-gradient(135deg, #1a4fc4, #00a8e8) !important; color: white !important; border: none !important; border-radius: 10px !important; font-weight: 600 !important; font-size: 14px !important; padding: 0.55rem 1.4rem !important; transition: all 0.2s !important; box-shadow: 0 4px 14px rgba(26,79,196,0.22) !important; }
-.stButton > button:hover { transform: translateY(-1px) !important; box-shadow: 0 6px 20px rgba(26,79,196,0.32) !important; }
-
-/* Inputs */
-[data-baseweb="input"] input, [data-baseweb="select"] { border-radius: 8px !important; }
-.streamlit-expanderHeader { background: #f8faff !important; border-radius: 10px !important; font-weight: 600 !important; color: #0d1b3e !important; }
-
-/* DataFrame */
-[data-testid="stDataFrame"] { border-radius: 12px !important; overflow: hidden; }
 </style>
 """
